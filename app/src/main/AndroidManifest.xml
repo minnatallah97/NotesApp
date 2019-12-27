@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.example.notesapp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/image_book"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Activites.Main2Activity"></activity>
+        <activity android:name=".Activites.SplashActivity" />
+        <activity android:name=".Activites.AddNote" />
+        <activity android:name=".Activites.HomeActivity" />
+        <activity android:name=".Activites.EmaikCheckActivity" />
+        <activity android:name=".Activites.ForgetpasswordActivity" />
+        <activity android:name=".Activites.SignupActivity" />
+        <activity android:name=".Activites.SigninActivity" />
+        <activity android:name=".Activites.IntroActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+    <dist:module dist:instant="true" />
+
+</manifest>

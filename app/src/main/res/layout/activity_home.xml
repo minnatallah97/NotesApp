@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activites.HomeActivity">
+    <View
+        android:id="@+id/v1"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:background="#7B1E58"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"></View>
+    <TextView
+        android:textColor="#7B1E58"
+        android:id="@+id/tv1"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="10dp"
+        android:text="Edit"></TextView>
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Browse"
+        android:textColor="#000"
+        android:layout_below="@id/v1"
+        android:layout_marginStart="30dp"
+        android:textSize="25sp"
+
+        ></TextView>
+    <View
+        android:id="@+id/line"
+        android:layout_margin="5dp"
+        android:layout_below="@id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"/>
+    <TextView
+        android:textSize="20sp"
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NoteNooks"
+        android:layout_below="@id/line"
+        android:layout_margin="20dp"
+        android:layout_alignParentStart="true"></TextView>
+    <TextView
+        android:textColor="#7B1E58"
+        android:textSize="20sp"
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show all"
+        android:layout_below="@id/line"
+        android:layout_margin="20dp"
+        android:layout_alignParentEnd="true"></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv3"
+        android:orientation="horizontal"
+        ></androidx.recyclerview.widget.RecyclerView>
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notes"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:layout_below="@id/rvH"
+        android:layout_margin="10dp"
+        android:layout_alignParentStart="true"/>
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show all"
+        android:textSize="20sp"
+        android:textColor="#7B1E58"
+        android:layout_below="@id/rvH"
+        android:layout_margin="10dp"
+        android:layout_alignParentEnd="true"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvV"
+        android:layout_below="@id/tv6">
+
+    </androidx.recyclerview.widget.RecyclerView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/action_bar"
+        android:src="@drawable/ic_add_black_50dp"></com.google.android.material.floatingactionbutton.FloatingActionButton>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/signout_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="20dp"
+        android:background="@drawable/action_bar"
+        android:src="@drawable/ic_exit_to_app_black_24dp">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+
+
+</RelativeLayout>

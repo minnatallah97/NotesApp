@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activites.AddNote">
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cancel"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/new_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="new Note "
+        android:layout_margin="20dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv1"/>
+    <ImageView
+        android:layout_marginTop="50dp"
+        android:id="@+id/img"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/tv1"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/item"/>
+    <EditText
+        android:id="@+id/note_title"
+        android:layout_centerInParent="true"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="title"
+        android:layout_below="@id/img"
+        android:layout_centerHorizontal="true"/>
+    <EditText
+        android:id="@+id/note_desc"
+        android:layout_centerInParent="true"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:layout_below="@id/note_title"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/save"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_below="@id/note_title"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape2"
+        android:textColor="#fff"
+        android:textAllCaps="false"></Button>
+
+
+</RelativeLayout>

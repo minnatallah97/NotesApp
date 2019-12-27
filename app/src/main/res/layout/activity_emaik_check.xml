@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activites.EmaikCheckActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_above="@id/chexk_tv"
+        android:src="@drawable/image"
+        android:layout_marginBottom="20dp"></ImageView>
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/chexk_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Check your email"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:textStyle="bold"></TextView>
+    <TextView
+        android:id="@+id/tv2"
+        android:textColor="#000"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chexk_tv"
+        android:text="We’ve sent instructions on how to reset
+The password (also check the Spam folder)."
+        android:textAlignment="center"
+        android:layout_margin="50dp"></TextView>
+    <Button
+        android:id="@+id/goToEmail"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:background="@drawable/shape4"
+        android:layout_margin="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go to Email"></Button>
+
+
+</RelativeLayout>
