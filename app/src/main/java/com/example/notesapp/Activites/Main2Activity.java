@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.example.notesapp.R;
 
-public class Main2Activity extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,4 +20,5 @@ public class Main2Activity extends AppCompatActivity {
         Log.i("our value ",Desc);
         Toast.makeText(this, ""+title+Desc, Toast.LENGTH_SHORT).show();
     }
+
 }

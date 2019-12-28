@@ -59,7 +59,9 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/shape2"
         android:textColor="#fff"
-        android:textAllCaps="false"></Button>
+        android:textAllCaps="false">
+
+    </Button>
 
 
 </RelativeLayout>
