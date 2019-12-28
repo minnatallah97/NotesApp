@@ -18,7 +18,7 @@
         android:id="@+id/new_note"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="new Note  "
+        android:text="new Note "
         android:layout_margin="20dp"
         android:textColor="#000"
         android:layout_centerHorizontal="true"
@@ -49,19 +49,26 @@
         android:hint="Description"
         android:layout_below="@id/note_title"
         android:layout_centerHorizontal="true"/>
+    <EditText
+        android:layout_below="@id/note_desc"
+        android:id="@+id/note_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Category"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        ></EditText>
     <Button
         android:id="@+id/save"
         android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
-        android:layout_below="@id/note_title"
+        android:layout_below="@id/note_category"
         android:layout_centerHorizontal="true"
         android:background="@drawable/shape2"
         android:textColor="#fff"
-        android:textAllCaps="false">
-
-    </Button>
+        android:textAllCaps="false"></Button>
 
 
 </RelativeLayout>

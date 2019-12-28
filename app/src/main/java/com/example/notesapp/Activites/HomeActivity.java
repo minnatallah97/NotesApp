@@ -1,4 +1,3 @@
-
 package com.example.notesapp.Activites;
 
 import androidx.annotation.NonNull;
@@ -11,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.notesapp.Adapters.NoteAdapter;
 import com.example.notesapp.Model.Note;
 import com.example.notesapp.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -59,6 +60,7 @@ public class HomeActivity extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull FirebaseViewHolder holder, int position, @NonNull final Note model) {
                 holder.title.setText(model.getNoteTitle());
                 holder.Desc.setText(model.getNoteDesc());
+                holder.Category.setText(model.getCategory());
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -66,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
                         Intent intent = new Intent(HomeActivity.this,Main2Activity.class);
                         intent.putExtra("title",model.getNoteTitle());
                         intent.putExtra("Desc",model.getNoteDesc());
+                        intent.putExtra("Category",model.getCategory());
                         startActivity(intent);
 
                     }

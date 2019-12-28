@@ -9,10 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.notesapp.R;
 
 public class FirebaseViewHolder extends RecyclerView.ViewHolder {
-    public TextView title,Desc;
+    public TextView title,Desc,Category;
     public FirebaseViewHolder(@NonNull View itemView) {
         super(itemView);
         title = itemView.findViewById(R.id.title_tv1);
         Desc = itemView.findViewById(R.id.desc_tv2);
+        Category = itemView.findViewById(R.id.catrgory);
     }
 }

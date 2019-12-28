@@ -22,9 +22,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AddNote extends AppCompatActivity {
     Button save;
-    EditText et_title , et_Desc;
-    TextView tv ;
+    EditText et_title , et_Desc , et_Category;
+    TextView tv;
     DatabaseReference databaseNote;
+
 
 
     @Override
@@ -35,6 +36,8 @@ public class AddNote extends AppCompatActivity {
         save = findViewById(R.id.save);
         et_title = findViewById(R.id.note_title);
         et_Desc = findViewById(R.id.note_desc);
+        et_Category = findViewById(R.id.note_category);
+
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,15 +50,15 @@ public class AddNote extends AppCompatActivity {
     private void addNote(){
         String title = et_title.getText().toString().trim();
         String desc = et_Desc.getText().toString().trim();
+        String category = et_Category.getText().toString().trim();
 
         if(!TextUtils.isEmpty(title)){
             String id = databaseNote.push().getKey();
-            Note note = new Note(id,title,desc);
+            Note note = new Note(id,title,desc,category);
             databaseNote.child(id).setValue(note);
             Toast.makeText(this, "Note Added ", Toast.LENGTH_SHORT).show();
 
         }
-
         else {
             Toast.makeText(this, "Enter the note title ", Toast.LENGTH_SHORT).show();
         }
