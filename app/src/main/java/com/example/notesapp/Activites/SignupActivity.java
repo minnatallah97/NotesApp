@@ -26,52 +26,52 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class SignupActivity extends AppCompatActivity {
 
-    static int PReqCode = 1 ;
-    static int REQUESCODE = 1 ;
+    static int PReqCode = 1  ;
+    static int REQUESCODE = 1  ;
 
-    private EditText userEmail,userPassword;
-    private ProgressBar loadingProgress;
-    private Button regBtn;
+    private EditText userEmail,userPassword ;
+    private ProgressBar loadingProgress ;
+    private Button regBtn ;
 
     private FirebaseAuth mAuth;
 
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+    protected void onCreate(Bundle savedInstanceState)  {
+        super.onCreate(savedInstanceState) ;
+        setContentView(R.layout.activity_signup) ;
 
 
 
         //ini views
-        userEmail = findViewById(R.id.email_et);
-        userPassword = findViewById(R.id.pass_et);
-        loadingProgress = findViewById(R.id.regProgressBar);
-        regBtn = findViewById(R.id.signup_btn);
-        loadingProgress.setVisibility(View.INVISIBLE);
+        userEmail = findViewById(R.id.email_et) ;
+        userPassword = findViewById(R.id.pass_et) ;
+        loadingProgress = findViewById(R.id.regProgressBar) ;
+        regBtn = findViewById(R.id.signup_btn) ;
+        loadingProgress.setVisibility(View.INVISIBLE) ;
 
 
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance() ;
 
 
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                regBtn.setVisibility(View.INVISIBLE);
-                loadingProgress.setVisibility(View.VISIBLE);
-                final String email = userEmail.getText().toString();
-                final String password = userPassword.getText().toString();
+                regBtn.setVisibility(View.INVISIBLE) ;
+                loadingProgress.setVisibility(View.VISIBLE) ;
+                final String email = userEmail.getText().toString() ;
+                final String password = userPassword.getText().toString() ;
 
 
-                if( email.isEmpty() || password.isEmpty() ) {
+                if( email.isEmpty() || password.isEmpty() )  {
 
 
 
-                    showMessage("Please Verify all fields") ;
+                    showMessage("Please Verify all fields")  ;
                     regBtn.setVisibility(View.VISIBLE);
-                    loadingProgress.setVisibility(View.INVISIBLE);
+                    loadingProgress.setVisibility(View.INVISIBLE) ;
 
 
                 }
@@ -79,7 +79,7 @@ public class SignupActivity extends AppCompatActivity {
                     // everything is ok and all fields are filled now we can start creating user account
                     // CreateUserAccount method will try to create the user if the email is valid
 
-                    CreateUserAccount(email,password);
+                    CreateUserAccount(email,password) ;
                 }
 
             }
@@ -87,7 +87,7 @@ public class SignupActivity extends AppCompatActivity {
 
     }
 
-    private void CreateUserAccount(String email, String password) {
+    private void CreateUserAccount(String email, String password)  {
 
 
         // this method create user account with specific email and password
@@ -109,7 +109,7 @@ public class SignupActivity extends AppCompatActivity {
                         {
 
                             // account creation failed
-                            showMessage("account creation failed" + task.getException().getMessage());
+                            showMessage("account creation failed" + task.getException().getMessage()) ;
                             regBtn.setVisibility(View.VISIBLE);
                             loadingProgress.setVisibility(View.INVISIBLE);
 
@@ -121,27 +121,27 @@ public class SignupActivity extends AppCompatActivity {
 
 
 
-    private void updateUI() {
+    private void updateUI()  {
 
-        Intent homeActivity = new Intent(getApplicationContext(),HomeActivity.class);
-        startActivity(homeActivity);
+        Intent homeActivity = new Intent(getApplicationContext(),HomeActivity.class) ;
+        startActivity(homeActivity) ;
         finish();
 
 
     }
 
     // simple method to show toast message
-    private void showMessage(String message) {
+    private void showMessage(String message)  {
 
-        Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show() ;
 
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)  {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == RESULT_OK && requestCode == REQUESCODE && data != null ) {
+        if (resultCode == RESULT_OK && requestCode == REQUESCODE && data != null )  {
 
         }
 

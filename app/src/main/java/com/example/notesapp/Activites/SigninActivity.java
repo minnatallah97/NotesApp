@@ -20,11 +20,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
-public class SigninActivity extends AppCompatActivity {
+public class SigninActivity extends AppCompatActivity  {
 
-    private EditText logEmail, logPassword;
+    private EditText logEmail, logPassword ;
     private Button logLogin;
-    private ProgressBar progressBar;
+    private ProgressBar progressBar ;
     TextView forget;
 
 
@@ -32,47 +32,47 @@ public class SigninActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signin);
+    protected void onCreate(Bundle savedInstanceState)  {
+        super.onCreate(savedInstanceState) ;
+        setContentView(R.layout.activity_signin) ;
 
-        forget = findViewById(R.id.forget);
-        logEmail = findViewById(R.id.login_email);
-        logPassword = findViewById(R.id.login_password);
-        logLogin = findViewById(R.id.login_btn);
+        forget = findViewById(R.id.forget) ;
+        logEmail = findViewById(R.id.login_email) ;
+        logPassword = findViewById(R.id.login_password) ;
+        logLogin = findViewById(R.id.login_btn) ;
 
-        progressBar = findViewById(R.id.register_pb);
+        progressBar = findViewById(R.id.register_pb) ;
 
-        progressBar.setVisibility(View.INVISIBLE);
+        progressBar.setVisibility(View.INVISIBLE) ;
 
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance() ;
 
         forget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SigninActivity.this,ForgetpasswordActivity.class);
-                startActivity(intent);
+                startActivity(intent) ;
             }
         });
 
         logLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
-                logLogin.setVisibility(View.INVISIBLE);
+                progressBar.setVisibility(View.VISIBLE) ;
+                logLogin.setVisibility(View.INVISIBLE) ;
 
 
-                final String Email = logEmail.getText().toString();
-                final String Password = logPassword.getText().toString();
+                final String Email = logEmail.getText().toString() ;
+                final String Password = logPassword.getText().toString() ;
 
 
-                if (Email.length() == 0 || Password.length() == 0) {
-                    showMessage("please fill the fields");
-                    logLogin.setVisibility(View.VISIBLE);
-                    progressBar.setVisibility(View.INVISIBLE);
+                if (Email.length() == 0 || Password.length() == 0)  {
+                    showMessage("please fill the fields") ;
+                    logLogin.setVisibility(View.VISIBLE) ;
+                    progressBar.setVisibility(View.INVISIBLE) ;
                 } else {
                     loginUser(Email, Password);
-                    Intent intent = new Intent(SigninActivity.this,HomeActivity.class);
+                    Intent intent = new Intent(SigninActivity.this,HomeActivity.class) ;
                     startActivity(intent);
                 }
 
@@ -81,25 +81,25 @@ public class SigninActivity extends AppCompatActivity {
         });
     }
 
-    private void loginUser(String email, String password) {
+    private void loginUser(String email, String password)  {
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (!task.isSuccessful()) {
-                    showMessage("Authentication Failed");
-                    logLogin.setVisibility(View.VISIBLE);
+                    showMessage("Authentication Failed") ;
+                    logLogin.setVisibility(View.VISIBLE) ;
                 } else {
-                    Intent intent = new Intent(SigninActivity.this, HomeActivity.class);
-                    startActivity(intent);
+                    Intent intent = new Intent(SigninActivity.this, HomeActivity.class) ;
+                    startActivity(intent) ;
                     finish();
                 }
             }
         });
     }
 
-    private void showMessage(String message) {
+    private void showMessage(String message)  {
 
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show() ;
 
     }
 
@@ -107,12 +107,12 @@ public class SigninActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseUser user = mAuth.getCurrentUser();
+        FirebaseUser user = mAuth.getCurrentUser() ;
 
         if (user != null) {
             // redirect user to his home page
-            startActivity(new Intent(SigninActivity.this, HomeActivity.class));
-            finish();
+            startActivity(new Intent(SigninActivity.this, HomeActivity.class)) ;
+            finish() ;
         }
     }
 }

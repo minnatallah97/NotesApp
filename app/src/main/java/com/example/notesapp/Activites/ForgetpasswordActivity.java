@@ -18,26 +18,26 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class ForgetpasswordActivity extends AppCompatActivity {
+public class ForgetpasswordActivity extends AppCompatActivity  {
 
-    private EditText inputEmail;
+    private EditText inputEmail ;
 
-    private Button btnReset;
+    private Button btnReset ;
 
-    private FirebaseAuth auth;
+    private FirebaseAuth auth ;
 
-    private ProgressBar progressBar;
+    private ProgressBar progressBar ;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgetpassword);
+        setContentView(R.layout.activity_forgetpassword) ;
         inputEmail = findViewById(R.id.email);
-        btnReset =  findViewById(R.id.btn_reset_password);
+        btnReset =  findViewById(R.id.btn_reset_password) ;
 
-        progressBar =  findViewById(R.id.progressBar);
+        progressBar =  findViewById(R.id.progressBar) ;
 
-        auth = FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance() ;
 
 
 
@@ -47,28 +47,28 @@ public class ForgetpasswordActivity extends AppCompatActivity {
 
                 String email = inputEmail.getText().toString().trim();
 
-                if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplication(), "Enter your registered email id", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(email))  {
+                    Toast.makeText(getApplication(), "Enter your registered email id", Toast.LENGTH_SHORT).show() ;
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.VISIBLE) ;
 
                 auth.sendPasswordResetEmail(email)
 
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
+                                if (task.isSuccessful())  {
                                     Toast.makeText(ForgetpasswordActivity.this, "We have sent you instructions to reset your password!", Toast.LENGTH_SHORT).show();
                                 } else {
                                     Toast.makeText(ForgetpasswordActivity.this, "Failed to send reset email!", Toast.LENGTH_SHORT).show();
                                 }
 
-                                progressBar.setVisibility(View.GONE);
+                                progressBar.setVisibility(View.GONE) ;
                             }
                         });
-                Intent intent = new Intent(ForgetpasswordActivity.this,EmaikCheckActivity.class);
+                Intent intent = new Intent(ForgetpasswordActivity.this,EmaikCheckActivity.class) ;
                 startActivity(intent);
             }
         });

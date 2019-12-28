@@ -12,25 +12,25 @@ import com.example.notesapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class EmaikCheckActivity extends AppCompatActivity {
+public class EmaikCheckActivity extends AppCompatActivity  {
     Button go;
     private FirebaseAuth auth;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_emaik_check);
+    protected void onCreate(Bundle savedInstanceState)  {
+        super.onCreate(savedInstanceState) ;
+        setContentView(R.layout.activity_emaik_check) ;
         go = findViewById(R.id.goToEmail);
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
+                Intent intent = new Intent(Intent.ACTION_VIEW) ;
                 Uri data = Uri.parse("mailto:"
                         + "xyz@abc.com"
-                        + "?subject=" + "Feedback" + "&body=" + "");
-                intent.setData(data);
-                startActivity(intent);
+                        + "?subject=" + "Feedback" + "&body=" + "") ;
+                intent.setData(data) ;
+                startActivity(intent) ;
             }
         });
     }

@@ -25,45 +25,45 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity  {
 
 
-    private RecyclerView recyclerView;
-    private FirebaseRecyclerOptions<Note> options;
-    private FirebaseRecyclerAdapter<Note,FirebaseViewHolder> adapter;
-    private DatabaseReference databaseReference;
+    private RecyclerView recyclerView ;
+    private FirebaseRecyclerOptions<Note> options ;
+    private FirebaseRecyclerAdapter<Note,FirebaseViewHolder> adapter ;
+    private DatabaseReference databaseReference ;
 
-    List<Note> arrayList;
-    FloatingActionButton add_btn;
-    FloatingActionButton signout;
+    List<Note> arrayList ;
+    FloatingActionButton add_btn ;
+    FloatingActionButton signout ;
 
     @Override
     protected void onStart() {
         super.onStart();
-        adapter.startListening();
+        adapter.startListening() ;
     }
 
     @Override
-    protected void onStop() {
+    protected void onStop()  {
         super.onStop();
-        adapter.stopListening();
+        adapter.stopListening() ;
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+    protected void onCreate(Bundle savedInstanceState)  {
+        super.onCreate(savedInstanceState) ;
+        setContentView(R.layout.activity_home) ;
 
 
         arrayList  = new ArrayList<Note>();
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("notes");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("notes") ;
         databaseReference.keepSynced(true);
-        options = new FirebaseRecyclerOptions.Builder<Note>().setQuery(databaseReference,Note.class).build();
+        options = new FirebaseRecyclerOptions.Builder<Note>().setQuery(databaseReference,Note.class).build() ;
         adapter = new FirebaseRecyclerAdapter<Note, FirebaseViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull FirebaseViewHolder holder, int position, @NonNull final Note model) {
-                holder.title.setText(arrayList.get(position).getNoteTitle());
-                holder.Desc.setText(arrayList.get(position).getNoteDesc());
+                holder.title.setText(arrayList.get(position).getNoteTitle()) ;
+                holder.Desc.setText(arrayList.get(position).getNoteDesc()) ;
 
 
 
@@ -76,29 +76,29 @@ public class HomeActivity extends AppCompatActivity {
             }
         };
 
-        add_btn = findViewById(R.id.add_btn);
-        recyclerView = findViewById(R.id.rvV);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(adapter);
+        add_btn = findViewById(R.id.add_btn) ;
+        recyclerView = findViewById(R.id.rvV) ;
+        recyclerView.setHasFixedSize(true) ;
+        recyclerView.setAdapter(adapter) ;
 
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this)) ;
         add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this,AddNote.class);
+                Intent intent = new Intent(HomeActivity.this,AddNote.class) ;
                 startActivity(intent);
 
 
             }
         });
-        signout = findViewById(R.id.signout_btn);
+        signout = findViewById(R.id.signout_btn) ;
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(HomeActivity.this,SigninActivity.class);
-                startActivity(intent);
+                FirebaseAuth.getInstance().signOut() ;
+                Intent intent = new Intent(HomeActivity.this,SigninActivity.class) ;
+                startActivity(intent) ;
             }
         });
 }
