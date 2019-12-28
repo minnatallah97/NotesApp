@@ -41,7 +41,7 @@
         android:layout_below="@id/v1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and …"
+        android:text="San fran was one of the coolest places i have ever been all the beautiful sightseeing and. …"
 
 
 />
