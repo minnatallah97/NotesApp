@@ -41,11 +41,6 @@ public class HomeActivity extends AppCompatActivity {
         adapter.startListening();
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        adapter.stopListening();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
