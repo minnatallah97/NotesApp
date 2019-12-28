@@ -7,6 +7,9 @@ public class Note {
     String NoteTitle;
     String NoteDesc;
 
+    public Note() {
+    }
+
     public Note(String noteId, String noteTitle, String noteDesc) {
         NoteId = noteId;
         NoteTitle = noteTitle;
