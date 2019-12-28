@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 public class AddNote extends AppCompatActivity {
     Button save;
     EditText et_title , et_Desc;
-    TextView tv;
+    TextView tv ;
     DatabaseReference databaseNote;
 
 
@@ -55,6 +55,7 @@ public class AddNote extends AppCompatActivity {
             Toast.makeText(this, "Note Added ", Toast.LENGTH_SHORT).show();
 
         }
+
         else {
             Toast.makeText(this, "Enter the note title ", Toast.LENGTH_SHORT).show();
         }
