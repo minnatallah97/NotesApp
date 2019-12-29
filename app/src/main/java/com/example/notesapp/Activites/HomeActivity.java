@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.notesapp.Adapters.NoteAdapter;
 import com.example.notesapp.Model.Note;
 import com.example.notesapp.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -22,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class HomeActivity extends AppCompatActivity {
